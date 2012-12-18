@@ -1,4 +1,18 @@
 Bonus::Application.routes.draw do
+  resources :users do
+             resources :messages do
+               collection do
+                 post :delete_selected
+               end
+             end
+           end
+
+  resources :properties
+
+  resources :property_pictures
+
+  resources :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
